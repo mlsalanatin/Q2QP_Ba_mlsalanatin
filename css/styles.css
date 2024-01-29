@@ -1,0 +1,565 @@
+/*Imported fonts from dafont.com*/
+@font-face {
+    font-family: Gontserrat;
+    src: url(../media/fonts/Gontserrat-Regular.ttf);
+}
+
+@font-face{
+    font-family: Imperator;
+    src: url(../media/fonts/Imperator.ttf);
+}
+
+@font-face{
+    font-family: Vogue;
+    src: url(../media/fonts/Vogue.ttf);
+}
+
+/*This is to ensure that at least 100% of the viewport height is taken up by the body*/
+body{
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #33333333;
+}
+
+header{
+    position: fixed;
+    min-width: 100%;
+    max-width: 100%;
+    background-color: #33333333;
+    z-index: 4;
+}
+
+.logo{
+    background-image: url(../media/images/bird.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 10.268562401263823vh;
+    width: 4.758418740849195vw;
+    margin-top: -0.7898894154818326vh;
+    margin-left: 1.0980966325036603vw;
+    display: inline-block;
+}
+
+.htitle{
+    position: absolute;
+    color: white;
+    font-family: 'Imperator';
+    font-size: 5.687203791469194vh;
+    display: inline-block;
+    margin-top: 1.5797788309636651vh;
+    margin-left: 2.1961932650073206vw;
+}
+
+.logo, .htitle{
+    opacity: 0;
+    animation: fade 1.5s ease-in forwards;
+}
+
+@keyframes fade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.dropbtn{
+    background-color: #27232333;
+    color: white;
+    font-family: Calibri, sans-serif;
+    font-size: 3.7914691943127963vh;
+    border: none;
+    border-radius: 5%;
+    position: absolute;
+    padding-right: 9.297218155197658vw;
+    padding-left: 1.0980966325036603vw;
+    padding-top: 0.7898894154818326vh;
+    padding-bottom: 1.5797788309636651vh;
+    top: 0.7898894154818326vh;
+    right: 1.8301610541727673vw;
+}
+
+.dropdown{
+    position: absolute;
+    top: 0.7898894154818326vh;
+    right: 0.36603221083455345vw;
+    display: inline-block;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    font-family: Calibri, sans-serif;
+    min-width: 11.71303074670571vw;
+    border-bottom-left-radius: 0.36603221083455345vw;
+    border-bottom-right-radius: 0.36603221083455345vw    ;
+    box-shadow: 0vh 1.263823064770932vh 2.527646129541864vh 0vh rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 7.109004739336493vh;
+    right: 1.8301610541727673vw;
+}
+
+.dropdown-content a{
+    color: black;
+    padding: 1.8957345971563981vh 1.171303074670571vw;
+    text-decoration: none;
+    display: block;
+}
+
+/*Color is distinct from original color of the menu, gradient is added for dimension*/
+.dropdown-content a:hover{
+    background: linear-gradient(to right, #ff6a76, #c42c2c);
+    color: white;
+}
+
+.dropdown-content:hover{
+    display: block;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+/*Button will match the menu color when hovered, it looks better this way*/
+.dropdown:hover .dropbtn{
+    color: black;
+    background-color: #f1f1f1;
+
+}
+
+.title h2{
+    position: absolute;
+    margin-left: 20%;
+    margin-top: 15%;
+    font-family: 'Imperator';
+    font-size: 6.6350710900473935vh;
+    color: white;
+}
+
+.title h1{
+    position: absolute;
+    margin-left: 15%;
+    margin-top: 19%;
+    font-family: 'Vogue';
+    font-size: 15.797788309636651vh;
+    color: white;
+}
+
+.title h2, .title h1{
+    opacity: 0;
+    animation: land 1.5s ease-in forwards;
+}
+
+@keyframes land{
+    from{
+        opacity: 0;
+        transform: translateY(-3.1595576619273302vh);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#player{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 55.292259083728275vh;
+    margin-left: 38.43338213762811vw;
+}
+
+footer{
+    background-color: #33333333;
+    color: white;
+    text-align: center;
+    padding: 1.5797788309636651vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 4;
+}
+
+.poster{
+    background-image: url(../media/images/swans.png);
+    width: 21.961932650073205vw;
+    height: 47.39336492890995vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    margin-top: 114.53396524486571vh;
+    margin-left: 38.43338213762811vw;
+}
+
+.poster:hover{
+    transform: translateY(-0.7898894154818326vh);
+    box-shadow: 0 5px 15px rgba(56, 42, 42, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#vid{
+    position: fixed;
+    border: none;
+    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+}
+
+#second h1{
+    text-align: center;
+    margin-top: 165.87677725118485vh;
+    margin-right: 7.320644216691069vw;
+    margin-left: 7.320644216691069vw;
+    color: white;
+    font-family: 'Imperator';
+    font-size: 5.687203791469194vh;
+}
+
+#second p{
+    text-align: center;
+    margin-top: -2.3696682464454977vh;
+    color: white;
+    font-family: 'Gontserrat';
+    font-size: 2.527646129541864vh;
+}
+
+#vid2{
+    position: absolute;
+    top: 200%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+}
+
+.image{
+    background-image: url(../media/images/nanno\ and\ tk.jpg);
+    background-repeat: no-repeat;
+    filter: blur(0.47393364928909953vh);
+    filter: brightness(50%);
+    position: absolute;
+    top: 309%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+}
+
+#third h1{
+    text-align: center;
+    margin-top: 31.595576619273302vh;
+    color: white;
+    font-family: 'Vogue';
+    font-size: 9.794628751974724vh;
+}
+
+#third p{
+    text-align: center;
+    margin-top: -3.949447077409163vh;
+    margin-right: 21.961932650073205vw;
+    margin-left: 21.961932650073205vw;
+    color: white;
+    font-family: 'Gontserrat';
+    font-size: 2.843601895734597vh;
+}
+
+.image2{
+    background-image: url(../media/images/blue.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 409%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+}
+
+#fourth h1{
+    text-align: center;
+    margin-top: 18.95734597156398vh;
+    color: white;
+    font-family: 'Vogue';
+    font-size: 8.530805687203792vh;
+}
+
+#fourth p{
+    text-align: center;
+    margin-top: -2.3696682464454977vh;
+    margin-left: 14.641288433382138vw;
+    margin-right: 14.641288433382138vw;
+    color: white;
+    font-family: 'Gontserrat';
+    font-size: 2.211690363349131vh;
+}
+
+#fourth img{
+    width: 29.648609077598827vw;
+    height: 36.018957345971565vh;
+    margin-top: 0vh;
+    margin-left: 25.62225475841874vw;
+}
+
+.poster3{
+    background-image: url(../media/images/hug.jpg);
+    width: 16.691068814055637vw;
+    height: 36.018957345971565vh;
+    background-size: contain;
+    margin-top: -36.65086887835703vh;
+    margin-left: 58.565153733528554vw;
+}
+
+#fourth img, .poster3{
+    opacity: 0;
+    animation: land 1.5s ease-in forwards;
+}
+
+#fourth img:hover, .poster3:hover{
+    transform: translateY(-0.7898894154818326vh);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nx{
+    position: absolute;
+    bottom: -350.870458135861vh;
+    right: 2.1961932650073206vw;
+    background-color: #27232333;
+    color: white;
+    padding: 0.7898894154818326vh 2.1961932650073206vw 1.5797788309636651vh 2.1961932650073206vw;
+    border-radius: 0.7898894154818326vh;
+    text-decoration: none;
+    font-family: 'Gontserrat';
+    font-size: 1.5em;
+    z-index: 2;
+}
+
+.nx a{
+    color: white;
+    font-size: 2.527646129541864vh;
+    text-decoration: none;
+}
+
+.nx:hover{
+    background: linear-gradient(to right, #0c0a0a33, #00000033);
+}
+
+#firsts{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    z-index: 0;
+}
+
+.bg-firsts{
+    background-image: url(../media/images/kali\ uchis.jpeg);
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    filter: brightness(50%);
+}
+
+#firsts h1{
+    position: absolute;
+    color: white;
+    font-family: 'Vogue';
+    font-size: 6.6350710900473935vh;
+    margin-top: 13.428120063191153vh;
+}
+
+.gallery{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: -78.98894154818325vh;
+    margin-left: 21.961932650073205vw;
+    margin-right: 21.961932650073205vw;
+    z-index: 1;
+}
+
+.gallery img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 3.1595576619273302vh;
+    opacity: 0;
+    animation: land 1.5s ease-in forwards;
+}
+
+.gallery img:hover{
+    transform: translateY(-0.7898894154818326vh);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#vid3{
+    position: fixed;
+    border: none;
+    object-fit: cover;
+    filter: brightness(50%);
+    top: 50%;
+    left: 50%;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+}
+
+#seconds h1{
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 7%;
+    font-family: 'Vogue';
+    font-size: 6.6350710900473935vh;
+    color: white;
+}
+
+.poster4{
+    background-image: url(../media/images/hug2.jpg);
+    width: 400px;
+    height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: -63.191153238546605vh;
+    margin-left: 53.440702781844806vw;
+}
+
+.poster5{
+    margin-left: 29.282576866764277vw;
+}
+
+#seconds p{
+    text-align: center;
+    color: white;
+    font-family: 'Gontserrat';
+    font-size: 2.843601895734597vh;
+    margin-top: 23.696682464454977vh;
+    margin-right: 51.24450951683748vw;
+    margin-left: 14.641288433382138vw;
+}
+
+#seconds a{
+    text-decoration: none;
+    color: lime;
+    font-weight: bold;
+}
+
+.bg-thirds{
+    position: absolute;
+    background-image: url(../media/images/elpaso.jpg);
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    filter: brightness(50%);
+    margin-top: 200px;
+    z-index: -1;
+}
+
+.nx2{
+    position: absolute;
+    bottom: -242.79146919431278vh;
+    right: 2.1961932650073206vw;
+    background-color: #27232333;
+    color: white;
+    padding: 0.7898894154818326vh 2.1961932650073206vw 1.5797788309636651vh 2.1961932650073206vw;
+    border-radius: 0.7898894154818326vh;
+    text-decoration: none;
+    font-family: 'Gontserrat';
+    font-size: 1.5em;
+    z-index: 2;
+}
+
+#thirds{
+    position: relative;
+    z-index: 1;
+}
+
+#thirds h1{
+    position: absolute;
+    margin-left: 43%;
+    margin-top: 22%;
+    font-family: 'Vogue';
+    font-size: 6.6350710900473935vh;
+    color: white;
+    z-index: 2;
+}
+
+.banners{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 350px;
+    margin-left: 325px;
+    z-index: 1;
+}
+
+.banners img{
+    width: 210px;
+    height: 387px;
+    object-fit: cover;
+    margin-left: 20px;
+    opacity: 0;
+    animation: land 1.5s ease-in forwards;
+}
+
+.nx2 a{
+    color: white;
+    font-size: 2.527646129541864vh;
+    text-decoration: none;
+}
+
+.nx2:hover{
+    background: linear-gradient(to right, #0c0a0a33, #00000033);
+}
+
+.nx3{
+    position: absolute;
+    bottom: -242.79146919431278vh;
+    left: 2.1961932650073206vw;
+    background-color: #27232333;
+    color: white;
+    padding: 0.7898894154818326vh 2.1961932650073206vw 1.5797788309636651vh 2.1961932650073206vw;
+    border-radius: 0.7898894154818326vh;
+    text-decoration: none;
+    font-family: 'Gontserrat';
+    font-size: 1.5em;
+    z-index: 2;
+}
+
+.nx3 a{
+    color: white;
+    font-size: 2.527646129541864vh;
+    text-decoration: none;
+}
+
+.nx3:hover{
+    background: linear-gradient(to right, #0c0a0a33, #00000033);
+}
